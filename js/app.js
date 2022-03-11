@@ -28,11 +28,11 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-function multiply(a, b) { //eslint-disable-line
-  let numMul = a * b;
-  let str = `The product of ${a} and ${b} is ${numMul}.`;
-  return [numMul, str];
-}
+// function multiply(a, b) { //eslint-disable-line
+//   let numMul = a * b;
+//   let str = `The product of ${a} and ${b} is ${numMul}.`;
+//   return [numMul, str];
+// }
 
 // Here is the test for multiply(); uncomment it to run it
 // testMultiply(5,9);
@@ -52,7 +52,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+  function sum(a, b, c){
+    return a + b + c;
+  }
+  function multiply(a, b, c) {
+    return a * b * c;
+  }
+  let numSum = sum(a, b, c);
+  let numMul = multiply(a, b, c);
+  let strOne = `${a} and ${b} and ${c} sum to ${numSum}.`;
+  let strTwo = `The product of ${a} and ${b} and ${c} is ${numMul}.`;
+  return [numSum, numMul, strOne, strTwo];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
