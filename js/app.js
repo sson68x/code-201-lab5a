@@ -8,11 +8,11 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 // Write your code here
-// function sum(a, b) { //eslint-disable-line
-//   let numSum = a + b;
-//   let str = `The sum of ${a} and ${b} is ${numSum}.`;
-//   return [numSum, str];
-// }
+function sum(a, b) { //eslint-disable-line
+  let numSum = a + b;
+  let str = `The sum of ${a} and ${b} is ${numSum}.`;
+  return [numSum, str];
+}
 
 // Here is the test for sum(); uncomment it to run it
 // testSum(4, 7);
@@ -28,11 +28,11 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-// function multiply(a, b) { //eslint-disable-line
-//   let numMul = a * b;
-//   let str = `The product of ${a} and ${b} is ${numMul}.`;
-//   return [numMul, str];
-// }
+function multiply(a, b) { //eslint-disable-line
+  let numMul = a * b;
+  let str = `The product of ${a} and ${b} is ${numMul}.`;
+  return [numMul, str];
+}
 
 // Here is the test for multiply(); uncomment it to run it
 // testMultiply(5,9);
@@ -52,21 +52,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  function sum(a, b, c){
-    return a + b + c;
-  }
-  function multiply(a, b, c) {
-    return a * b * c;
-  }
-  let numSum = sum(a, b, c);
-  let numMul = multiply(a, b, c);
-  let strOne = `${a} and ${b} and ${c} sum to ${numSum}.`;
-  let strTwo = `The product of ${a} and ${b} and ${c} is ${numMul}.`;
-  return [numSum, numMul, strOne, strTwo];
+  let numSum = sum(a, b);
+  let totalSum = sum(numSum[0], c);
+  let numMul = multiply(a, b);
+  let totalMul = multiply(numMul[0], c);
+  let strOne = `${a} and ${b} and ${c} sum to ${totalSum[0]}.`;
+  let strTwo = `The product of ${a} and ${b} and ${c} is ${totalMul[0]}.`;
+  return [totalSum[0], totalMul[0], strOne, strTwo];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
