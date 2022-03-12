@@ -51,16 +51,15 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-
-function sumAndMultiply(a, b, c) { //eslint-disable-line
-  let numSum = sum(a, b);
-  let totalSum = sum(numSum[0], c)
-  let numMul = multiply(a, b);
-  let totalMul = multiply(numMul[0], c);
-  let strOne = `${a} and ${b} and ${c} sum to ${totalSum[0]}.`;
-  let strTwo = `The product of ${a} and ${b} and ${c} is ${totalMul[0]}.`;
-  return [totalSum[0], totalMul[0], strOne, strTwo];
-}
+// function sumAndMultiply(a, b, c) { //eslint-disable-line
+//   let numSum = sum(a, b);
+//   let totalSum = sum(numSum[0], c);
+//   let numMul = multiply(a, b);
+//   let totalMul = multiply(numMul[0], c);
+//   let strOne = `${a} and ${b} and ${c} sum to ${totalSum[0]}.`;
+//   let strTwo = `The product of ${a} and ${b} and ${c} is ${totalMul[0]}.`;
+//   return [totalSum[0], totalMul[0], strOne, strTwo];
+// }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
@@ -81,8 +80,8 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 // function sumArray(sumArr) { //eslint-disable-line
-//   function sum()
-//   let str = `${testArray[0]}, ${testArray[1]}, ${testArray[2]} was pased in as an array of numbers, and 9 is their sum.`;
+//   let numSum = sum(sum(sumArr[0], sumArr[1])[0], sumArr[2])[0];
+//   let str = `${sumArr} was passed in as an array of numbers, and ${numSum} is their sum.`;
 //   return [numSum, str];
 // }
 
@@ -104,7 +103,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+  let numMul = multiply(multiply(multArr[0], multArr[1])[0], multArr[2])[0];
+  let str = `The numbers ${multArr} have a product of ${numMul}.`
+  return [numMul, str];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
