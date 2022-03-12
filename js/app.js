@@ -8,11 +8,11 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 // Write your code here
-// function sum(a, b) { //eslint-disable-line
-//   let numSum = a + b;
-//   let str = `The sum of ${a} and ${b} is ${numSum}.`;
-//   return [numSum, str];
-// }
+function sum(a, b) { //eslint-disable-line
+  let numSum = a + b;
+  let str = `The sum of ${a} and ${b} is ${numSum}.`;
+  return [numSum, str];
+}
 
 // Here is the test for sum(); uncomment it to run it
 // testSum(4, 7);
@@ -28,11 +28,11 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-// function multiply(a, b) { //eslint-disable-line
-//   let numMul = a * b;
-//   let str = `The product of ${a} and ${b} is ${numMul}.`;
-//   return [numMul, str];
-// }
+function multiply(a, b) { //eslint-disable-line
+  let numMul = a * b;
+  let str = `The product of ${a} and ${b} is ${numMul}.`;
+  return [numMul, str];
+}
 
 // Here is the test for multiply(); uncomment it to run it
 // testMultiply(5,9);
@@ -51,15 +51,15 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-// function sumAndMultiply(a, b, c) { //eslint-disable-line
-//   let numSum = sum(a, b);
-//   let totalSum = sum(numSum[0], c);
-//   let numMul = multiply(a, b);
-//   let totalMul = multiply(numMul[0], c);
-//   let strOne = `${a} and ${b} and ${c} sum to ${totalSum[0]}.`;
-//   let strTwo = `The product of ${a} and ${b} and ${c} is ${totalMul[0]}.`;
-//   return [totalSum[0], totalMul[0], strOne, strTwo];
-// }
+function sumAndMultiply(a, b, c) { //eslint-disable-line
+  let numSum = sum(a, b);
+  let totalSum = sum(numSum[0], c);
+  let numMul = multiply(a, b);
+  let totalMul = multiply(numMul[0], c);
+  let strOne = `${a} and ${b} and ${c} sum to ${totalSum[0]}.`;
+  let strTwo = `The product of ${a} and ${b} and ${c} is ${totalMul[0]}.`;
+  return [totalSum[0], totalMul[0], strOne, strTwo];
+}
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
@@ -79,11 +79,11 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
 
-// function sumArray(sumArr) { //eslint-disable-line
-//   let numSum = sum(sum(sumArr[0], sumArr[1])[0], sumArr[2])[0];
-//   let str = `${sumArr} was passed in as an array of numbers, and ${numSum} is their sum.`;
-//   return [numSum, str];
-// }
+function sumArray(sumArr) { //eslint-disable-line
+  let numSum = sum(sum(sumArr[0], sumArr[1])[0], sumArr[2])[0];
+  let str = `${sumArr} was passed in as an array of numbers, and ${numSum} is their sum.`;
+  return [numSum, str];
+}
 
 // Here is the test for sumArray(); uncomment it to run it
 
@@ -133,10 +133,12 @@ Test this function by hand in the console to get it working, and when you think 
 let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+  let numMul = multiply(multiply(multiply(multiply(dynamicArray[0], dynamicArray[1])[0], dynamicArray[2])[0], dynamicArray[3])[0], dynamicArray[4])[0];
+  let str = `The numbers ${dynamicArray} have a product of ${numMul}.`
+  return [numMul, str];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
